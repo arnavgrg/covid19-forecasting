@@ -28,14 +28,25 @@ Virtual Environment Setup
     - Normalize each of them between [0,1]
 3. Augment the dataset:
   - State-specific moving averages (3 day, 7 day, 10 day, 14 day)
-  - Get population data per state, and then create:
-    - Deaths/100K
-    - Confirmed/100K
   - Find a way to merge graph data with train data
   - Need to split entire dataset per state
 4. Feature selection and exploration
   - Gain a better understanding of the features 
     - If two features are highly correlated, the model may actually perform better by just using one them.
+5. Additional Features 
+  -(If we use GMM/K-Means/DBSCAN for clustering)
+    - Get population data per state, and then create: (confirmed, deaths)
+      - Deaths/100K
+      - Confirmed/100K
+    - Age distribution: (confirmed, deaths)
+      - Either percentage of population in different age groups
+      - Percentage over 65
+    - Ethnicity distribution
+  - Without clustering (state specific models)
+    - Number of tests conducted per state per day (confirmed)
+    - Metric to determine how effective quarantining was:
+      - What level of safety (1-7)
+      - Varies over time
    
 # Evaluation Metric
 
